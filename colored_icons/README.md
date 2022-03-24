@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="green-red-flow.css"/>
+<link rel="stylesheet" href="blue-red-flow.css"/>
+
 # Colored Icons
 
 The idea is that when you have a state, you can pick between a 100 colors and you can calculate the precise color you want to use. The result could look like
@@ -66,6 +69,58 @@ Here, I show grey if the *Pellematic* is not working, and a relative color when 
 * greenish when it is working at low percentage
 * yellowish around 50%
 * red-ish when it reached 80% or higher.
+
+The table below shows how these colors evolve.
+
+<table>
+   <tbody>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p0);">0%</td>
+            <td style="background-color: var(--blue-red-flow--p0);">0%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p10);">10%</td>
+            <td style="background-color: var(--blue-red-flow--p10);">10%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p20);">20%</td>
+            <td style="background-color: var(--blue-red-flow--p20);">20%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p30);">30%</td>
+            <td style="background-color: var(--blue-red-flow--p30);">30%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p40);">40%</td>
+            <td style="background-color: var(--blue-red-flow--p40);">40%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p50);">50%</td>
+            <td style="background-color: var(--blue-red-flow--p50);">50%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p60);">60%</td>
+            <td style="background-color: var(--blue-red-flow--p60);">60%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p70);">70%</td>
+            <td style="background-color: var(--blue-red-flow--p70);">70%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p80);">80%</td>
+            <td style="background-color: var(--blue-red-flow--p80);">80%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p90);">90%</td>
+            <td style="background-color: var(--blue-red-flow--p90);">90%</td>
+         </tr>
+         <tr>
+            <td style="background-color: var(--green-red-flow--p100);">100%</td>
+            <td style="background-color: var(--blue-red-flow--p100);">100%</td>
+         </tr>
+   </tbody>
+</table>
+
 
 ## How to install
 
