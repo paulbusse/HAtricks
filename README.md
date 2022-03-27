@@ -10,3 +10,11 @@ This is obviously free, my only ask is that if you enhance this, let me know, so
 ## Icon color coding
 
 This directory shows you how to color code icons depending on the state. E.g. battery state.
+
+## Home assistant DB backup
+
+My home assistant database has grown considerably and backup takes so long, I get 
+```
+ The recorder queue reached the maximum size of 30000; Events are no longer being recorded
+ ```
+ The script tries to avoid that.

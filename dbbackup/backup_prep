@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# This file calculates some data backups.
+# Backing up the live database does not give a consistent backup
+
+HAHOME=/home/homeassistant
+HADIR="$HAHOME/homeassistant"
+MAXSIZE=$((1024 * 1024 * 1024)) # = 1GB
+
+export VARDIR="$HAHOME/var"
+export BACKUPDIR="$HAHOME/var/BACKUP"
+
+function sqlite_bu () {
+    DATABASE=$1
+    BACKUP=$2
+    
+    size=`stat -c '%s' $DATABASE`
+    if [[ $size -gt $MAXSIZE ]]; then
+        CLONE="$DATABASE-clone"
+        sqlite3 $DATABASE ".clone $CLONE"
+        DATABASE=$CLONE
+    fi
+
+    sqlite3 $DATABASE "VACUUM INTO '$BACKUP';"
+    
+    if [ -f $CLONE ]; then
+        rm -f $CLONE
+    fi
+
+    gzip $BACKUP
+}
+
+mkdir -p $BACKUPDIR
+
+HA_DB=$HAHOME/homeassistant/home-assistant_v2.db
+HA_DB_BACKUP=$BACKUPDIR/home-assistant_v2.db.backup
+sqlite_bu $HA_DB $HA_DB_BACKUP
+
+DECONZ_DB=/home/pi/.local/share/dresden-elektronik/deCONZ/zll.db
+DECONZ_DB_BACKUP=$BACKUPDIR/zll.db.backup
+sqlite_bu $DECONZ_DB $DECONZ_DB_BACKUP
