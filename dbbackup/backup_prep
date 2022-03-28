@@ -27,7 +27,7 @@ function sqlite_bu () {
         rm -f $CLONE
     fi
 
-    gzip $BACKUP
+    gzip -f $BACKUP
 }
 
 mkdir -p $BACKUPDIR
