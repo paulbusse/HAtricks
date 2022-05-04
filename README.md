@@ -13,8 +13,8 @@ This directory shows you how to color code icons depending on the state. E.g. ba
 
 ## Home assistant DB backup
 
-My home assistant database has grown considerably and backup takes so long, I get 
-```
- The recorder queue reached the maximum size of 30000; Events are no longer being recorded
- ```
- The script tries to avoid that.
+My home assistant database has grown considerably and backup takes long. This is the script to still create consistent backups.
+
+## DB Cleanup
+
+A script to remove rows from the events table based on a query and at a slow pace. Inspired by recorder.purge_entities. Do not use this on the states table. Bad idea.
