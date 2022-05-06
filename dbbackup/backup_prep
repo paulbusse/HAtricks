@@ -4,11 +4,16 @@
 # Backing up the live database does not give a consistent backup
 
 HAHOME=/home/homeassistant
-HADIR="$HAHOME/homeassistant"
 MAXSIZE=$((1024 * 1024 * 1024)) # = 1GB
 
-export VARDIR="$HAHOME/var"
 export BACKUPDIR="$HAHOME/var/BACKUP"
+
+function postgres_bu () {
+    DATABASE=$1
+    BACKUP=$2
+
+    pg_dump -Fc $DATABASE > $BACKUP
+}
 
 function sqlite_bu () {
     DATABASE=$1
@@ -34,7 +39,7 @@ mkdir -p $BACKUPDIR
 
 HA_DB=$HAHOME/homeassistant/home-assistant_v2.db
 HA_DB_BACKUP=$BACKUPDIR/home-assistant_v2.db.backup
-sqlite_bu $HA_DB $HA_DB_BACKUP
+postgres_bu $HA_DB $HA_DB_BACKUP
 
 DECONZ_DB=/home/pi/.local/share/dresden-elektronik/deCONZ/zll.db
 DECONZ_DB_BACKUP=$BACKUPDIR/zll.db.backup
