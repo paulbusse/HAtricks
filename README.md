@@ -18,3 +18,6 @@ My home assistant database has grown considerably and backup takes long. This is
 ## DB Cleanup
 
 A script to remove rows from the events table based on a query and at a slow pace. Inspired by recorder.purge_entities. Do not use this on the states table. Bad idea.
+
+## Sunnybeamtool
+Read information over a USB connection from a sunnybeam.
