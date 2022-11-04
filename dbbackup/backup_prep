@@ -37,8 +37,8 @@ function sqlite_bu () {
 
 mkdir -p $BACKUPDIR
 
-HA_DB=$HAHOME/homeassistant/home-assistant_v2.db
-HA_DB_BACKUP=$BACKUPDIR/home-assistant_v2.db.backup
+HA_DB=hadb
+HA_DB_BACKUP=$BACKUPDIR/hadb.backup
 postgres_bu $HA_DB $HA_DB_BACKUP
 
 DECONZ_DB=/home/pi/.local/share/dresden-elektronik/deCONZ/zll.db
